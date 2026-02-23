@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Info</title>
+</head>
+<body>
+
+    <h2>User Information</h2>
+
+    <button onclick="showUser()">Show Details</button>
+
+    <p id="name"></p>
+    <p id="age"></p>
+    <p id="city"></p>
+
+    <script>
+        function displayUserInfo(userObj) {
+            document.getElementById("name").innerText = "Name: " + userObj.name;
+            document.getElementById("age").innerText = "Age: " + userObj.age;
+            document.getElementById("city").innerText = "City: " + userObj.city;
+        }
+
+        function showUser() {
+            let user = {
+                name: "Keerthana",
+                age: 20,
+                city: "Hyderabad"
+            };
+
+            displayUserInfo(user);
+        }
+    </script>
+
+</body>
+</html>
