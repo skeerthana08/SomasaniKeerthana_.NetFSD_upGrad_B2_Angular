@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Logger</title>
+</head>
+<body>
+
+<h2>Location Logger</h2>
+
+<button onclick="getLocation()">Get My Location</button>
+
+<p id="output"></p>
+<ul id="history"></ul>
+
+<script>
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(success, error);
+}
+
+function success(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+
+    document.getElementById("output").innerText =
+        "Latitude: " + lat + " , Longitude: " + lon;
+
+    var locations = JSON.parse(localStorage.getItem("locations")) || [];
+
+    locations.push({ latitude: lat, longitude: lon });
+
+    if (locations.length > 5) {
+        locations.shift(); // keep only last 5
+    }
+
+    localStorage.setItem("locations", JSON.stringify(locations));
+
+    displayHistory();
+}
+
+function error(err) {
+    document.getElementById("output").innerText =
+        "Error: " + err.message;
+}
+
+function displayHistory() {
+    var locations = JSON.parse(localStorage.getItem("locations")) || [];
+    var list = document.getElementById("history");
+
+    list.innerHTML = "";
+
+    for (var i = 0; i < locations.length; i++) {
+        var li = document.createElement("li");
+        li.innerText =
+            locations[i].latitude + ", " + locations[i].longitude;
+        list.appendChild(li);
+    }
+}
+
+displayHistory(); // load on page start
+</script>
+
+</body>
+</html>
