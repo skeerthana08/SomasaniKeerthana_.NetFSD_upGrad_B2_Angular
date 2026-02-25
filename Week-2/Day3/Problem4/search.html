@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Search</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 250px;
+            margin: 5px auto;
+        }
+
+        .no-result {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Product Search</h2>
+
+    <input type="text" id="searchBox" placeholder="Search product...">
+
+    <ul id="productList"></ul>
+
+    <p id="message" class="no-result"></p>
+
+    <script>
+        const products = ["Shirt", "Jeans", "Shoes", "Watch", "Bag"];
+
+        const searchBox = document.getElementById("searchBox");
+        const productList = document.getElementById("productList");
+        const message = document.getElementById("message");
+
+        // Display all products initially
+        function displayProducts(list) {
+            productList.innerHTML = "";
+
+            list.forEach(product => {
+                const li = document.createElement("li");
+                li.innerText = product;
+                productList.appendChild(li);
+            });
+        }
+
+        displayProducts(products);
+
+        // Filter on input
+        searchBox.addEventListener("input", function () {
+            const value = searchBox.value.toLowerCase();
+
+            const filtered = products.filter(product =>
+                product.toLowerCase().includes(value)
+            );
+
+            productList.innerHTML = "";
+
+            if (filtered.length === 0) {
+                message.innerText = "No Results Found";
+            } else {
+                message.innerText = "";
+                displayProducts(filtered);
+            }
+        });
+    </script>
+
+</body>
+</html>

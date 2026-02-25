@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.calculator {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+#display {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 18px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ✅ Media Query */
+@media (max-width: 500px) {
+    .calculator {
+        width: 90%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

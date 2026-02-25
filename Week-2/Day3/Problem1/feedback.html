@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Button</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Feedback</h2>
+
+    <button id="feedbackBtn">Submit Feedback</button>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("feedbackBtn").addEventListener("click", function() {
+            document.getElementById("message").innerText = "Feedback submitted successfully!";
+        });
+    </script>
+
+</body>
+</html>
