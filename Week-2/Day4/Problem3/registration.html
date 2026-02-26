@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row">
+
+        <!-- LEFT: FORM -->
+        <div class="col-md-6 mb-4">
+            <h2 class="text-center mb-4">Registration Form</h2>
+
+            <input type="text" id="name" class="form-control mb-3" placeholder="Enter name" required>
+            <input type="text" id="course" class="form-control mb-3" placeholder="Enter course" required>
+            <input type="email" id="email" class="form-control mb-3" placeholder="Enter email" required>
+            <input type="number" id="contact" class="form-control mb-3" placeholder="Enter contact number" required>
+
+            <button id="registerBtn" class="btn btn-primary">Register</button>
+        </div>
+
+        <!-- RIGHT: TABLE -->
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Registered Users</h2>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Data will come here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- JS -->
+<script>
+document.getElementById("registerBtn").addEventListener("click", function () {
+
+    let name = document.getElementById("name").value.trim();
+    let course = document.getElementById("course").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let contact = document.getElementById("contact").value.trim();
+
+    // Validation
+    if (name === "" || course === "" || email === "" || contact === "") {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    let tableBody = document.getElementById("tableBody");
+
+    let newRow = `
+        <tr>
+            <td>${name}</td>
+            <td>${course}</td>
+            <td>${email}</td>
+            <td>${contact}</td>
+        </tr>
+    `;
+
+    tableBody.innerHTML += newRow;
+
+    // Reset form
+    document.getElementById("name").value = "";
+    document.getElementById("course").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("contact").value = "";
+});
+</script>
+
+</body>
+</html>
