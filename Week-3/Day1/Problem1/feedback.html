@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, select, textarea {
+            display: block;
+            margin: 10px auto;
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Student Feedback Form</h2>
+
+<form id="feedbackForm">
+    <input type="text" id="name" placeholder="Name">
+    <input type="email" id="email" placeholder="Email">
+
+    <select id="rating">
+        <option value="">Select Rating</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Average</option>
+    </select>
+
+    <textarea id="comments" placeholder="Comments"></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+    $("#feedbackForm").submit(function(e) {
+        e.preventDefault();
+
+        let name = $("#name").val();
+        let email = $("#email").val();
+
+        if (name === "" || email === "") {
+            $("#message").text("Name and Email cannot be empty")
+                         .removeClass("success")
+                         .addClass("error");
+        } else {
+            $("#message").text("Feedback submitted successfully!")
+                         .removeClass("error")
+                         .addClass("success");
+
+            // Clear form
+            $("#feedbackForm")[0].reset();
+        }
+    });
+</script>
+
+</body>
+</html>

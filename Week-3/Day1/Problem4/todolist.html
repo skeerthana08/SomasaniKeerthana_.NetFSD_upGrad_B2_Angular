@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        input {
+            padding: 8px;
+            width: 200px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-left: 5px;
+        }
+
+        li {
+            list-style: none;
+            margin: 10px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>To-Do List</h2>
+
+<input type="text" id="taskInput" placeholder="Enter task">
+<button id="addBtn">Add</button>
+
+<h4>Total Tasks: <span id="total">0</span></h4>
+<h4>Completed Tasks: <span id="completed">0</span></h4>
+
+<ul id="taskList"></ul>
+
+<script>
+
+let total = 0;
+let completed = 0;
+
+// Add Task
+$("#addBtn").click(function () {
+
+    let task = $("#taskInput").val();
+
+    if (task === "") return;
+
+    $("#taskList").append(
+        `<li>
+            <span class="taskText">${task}</span>
+            <button class="deleteBtn">Delete</button>
+        </li>`
+    );
+
+    total++;
+    $("#total").text(total);
+
+    $("#taskInput").val("");
+});
+
+
+// Mark as completed (Event Delegation)
+$("#taskList").on("click", ".taskText", function () {
+
+    if (!$(this).hasClass("completed")) {
+        $(this).addClass("completed");
+        completed++;
+    } else {
+        $(this).removeClass("completed");
+        completed--;
+    }
+
+    $("#completed").text(completed);
+});
+
+
+// Delete Task (Event Delegation)
+$("#taskList").on("click", ".deleteBtn", function () {
+
+    if ($(this).siblings().hasClass("completed")) {
+        completed--;
+    }
+
+    $(this).parent().remove();
+
+    total--;
+    $("#total").text(total);
+    $("#completed").text(completed);
+});
+
+</script>
+
+</body>
+</html>

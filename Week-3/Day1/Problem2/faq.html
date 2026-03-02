@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ Section</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+
+    .faq-container {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .question {
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .answer {
+      display: none;
+      padding: 10px;
+      background: white;
+      border: 1px solid #ddd;
+    }
+
+    .active {
+      background: #28a745 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="faq-container">
+  <h2>FAQ Section</h2>
+
+  <div class="faq">
+    <div class="question">What is HTML?</div>
+    <div class="answer">HTML is used to structure web pages.</div>
+  </div>
+
+  <div class="faq">
+    <div class="question">What is CSS?</div>
+    <div class="answer">CSS is used for styling web pages.</div>
+  </div>
+
+  <div class="faq">
+    <div class="question">What is JavaScript?</div>
+    <div class="answer">JavaScript adds interactivity to websites.</div>
+  </div>
+
+  <div class="faq">
+    <div class="question">What is jQuery?</div>
+    <div class="answer">jQuery is a JavaScript library for DOM manipulation.</div>
+  </div>
+
+  <div class="faq">
+    <div class="question">What is Bootstrap?</div>
+    <div class="answer">Bootstrap is a CSS framework for responsive design.</div>
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function(){
+
+    $(".question").click(function(){
+
+      // toggle answer
+      $(this).next(".answer").slideToggle();
+
+      // highlight selected question
+      $(this).toggleClass("active");
+
+    });
+
+  });
+</script>
+
+</body>
+</html>

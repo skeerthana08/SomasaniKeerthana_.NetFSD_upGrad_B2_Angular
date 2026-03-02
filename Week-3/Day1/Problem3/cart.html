@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add to Cart Counter</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .product {
+            margin: 15px;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+
+        .msg {
+            color: green;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Shopping Cart</h1>
+<h3>Cart Items: <span id="count">0</span></h3>
+
+<div id="products">
+
+    <div class="product">
+        Laptop 
+        <button class="addBtn">Add to Cart</button>
+        <span class="msg"></span>
+    </div>
+
+    <div class="product">
+        Phone 
+        <button class="addBtn">Add to Cart</button>
+        <span class="msg"></span>
+    </div>
+
+    <div class="product">
+        Headphones 
+        <button class="addBtn">Add to Cart</button>
+        <span class="msg"></span>
+    </div>
+
+    <div class="product">
+        Watch 
+        <button class="addBtn">Add to Cart</button>
+        <span class="msg"></span>
+    </div>
+
+</div>
+
+<script>
+
+let cartCount = 0;
+
+// Event delegation
+$("#products").on("click", ".addBtn", function () {
+
+    cartCount++;
+
+    // Update count
+    $("#count").text(cartCount);
+
+    // Disable button
+    $(this).prop("disabled", true);
+
+    // Show message
+    $(this).siblings(".msg").text("Added!");
+
+});
+
+</script>
+
+</body>
+</html>
