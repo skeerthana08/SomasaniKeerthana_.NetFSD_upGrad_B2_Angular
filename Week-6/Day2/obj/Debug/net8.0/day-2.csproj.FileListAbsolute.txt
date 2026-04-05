@@ -1,0 +1,5 @@
+C:\Users\YOGESWAR\Desktop\hands-on\Week-6\day-2\obj\Debug\net8.0\day-2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\YOGESWAR\Desktop\hands-on\Week-6\day-2\obj\Debug\net8.0\day-2.AssemblyInfoInputs.cache
+C:\Users\YOGESWAR\Desktop\hands-on\Week-6\day-2\obj\Debug\net8.0\day-2.AssemblyInfo.cs
+C:\Users\YOGESWAR\Desktop\hands-on\Week-6\day-2\obj\Debug\net8.0\day-2.csproj.CoreCompileInputs.cache
+C:\Users\YOGESWAR\Desktop\hands-on\Week-6\day-2\obj\Debug\net8.0\day-2.sourcelink.json
