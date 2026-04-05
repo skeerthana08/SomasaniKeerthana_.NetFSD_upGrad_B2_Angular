@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "HRS1p6YYZZw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\YOGESWAR\\Desktop\\hands-on\\Week-6\\day-4\\FirstProject\\FirstProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\YOGESWAR\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\YOGESWAR\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\YOGESWAR\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\YOGESWAR\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.25\\microsoft.netcore.app.host.win-x64.8.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
